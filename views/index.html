@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/foundation/css/foundation.css" />
+	<script src="/jquery/dist/jquery.min.js"></script>
+	<script src ="/javascript/main.js"></script>
+</head>
+<body>
+	<div class="row">
+		<div class="large-12 columns">
+			<img src="logo.png"/>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<h4>Upload videos to Brightcove</h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<ol style="font-size:0.8rem">
+      <li>Upload videos to S3 bucket.</li>
+			<li>TODO offer way to input and create json on the backend</li>
+			<li>**MAXIMUM OF 100 VIDEOS**</li>
+			<li>Select Account from dropdown and click "Start Ingest" button</li>
+      <li>Enter key and secret obtained from video cloud</a></li>
+			<li>Progress meter will show progress and display message when complete</li>
+			</ol>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+
+			<fieldset class="fieldset">
+			  <legend>Ingest Settings</legend>
+			  <div class="alert callout" id="submitError" style="display:none"></div>
+			  <div class="row">
+				<div class="large-12 columns">
+				  <label>Video Data:
+					<textarea id="videoData" rows="10" value=""></textarea>
+					<!-- Sample Json - [ { "name": "Woodpecker", "description": "A bird that hunts insects inside wood", "url": "http://learning-services-media.brightcove.com/videos/mp4/Bird_Woodpecker.mp4", "reference_id": "Bird_Woodpecker.mp4" },
+						{ "name": "Chickadee", "description": "A small friendly bird", "url": "http://learning-services-media.brightcove.com/videos/mp4/Bird_Chickadee.mp4", "reference_id": "Bird_Chickadee.mp4" },
+						{ "name": "Great Blue Heron", "description": "Pair of great blue herons", "url": "http://learning-services-media.brightcove.com/videos/mp4/greatblueheron.mp4",	"reference_id": "greatblueheron.mp4" },
+						{ "name": "Great Horned Owl", "description": "Mother and child owls", "url": "http://learning-services-media.brightcove.com/videos/mp4/greathornedowl.mp4", "reference_id": "greathornedowl.mp4" } ]-->
+				  </label>
+				</div>
+			  </div>
+			  <div class="row">
+          <div class="small-12 medium-6 columns">
+            <label>Account:
+            <select  name="selectAccountId" id="selectAccountId">
+              <option value="">Select Account</option>
+            </select>
+            </label>
+          </div>
+          <div class="large-6 columns">
+            <!-- <label>Profile:
+              TODO offer choice of profile
+              <select id="profile">
+                <option value="videocloud-default-v1">Video Cloud Default v1</option>
+                <option value="smart-player-transition">Smart Player Transition</option>
+              <select>
+            </label>-->
+          </div>
+			  </div>
+			  <div class="row">
+          <div class="small-12 medium-6 columns">
+            <label>ClientId:
+            <input id="clientId" type="text" value="" />
+            </label>
+          </div>
+          <div class="small-12 medium-6 columns">
+            <label>ClientSecret:
+            <input id="clientSecret" type="text" value=""/>
+            </label>
+          </div>
+			  </div>
+			  <div class="row">
+				<div class="small-12 medium-6 columns">
+				  <label>
+					<a href="#" class="button" id="diSubmit">Start Ingest</a>
+				  </label>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="large-12 columns">
+					<div class="progressBar" style="display:none">
+						<p style="margin:0;">Processing . . . </p>
+						<progress max="" value=""></progress>
+					</div>
+					<div id="messageBox" style="color:red"></div>
+				</div>
+			  </div>
+			</fieldset>
+
+		</div>
+	</div>
+	</body>
+</html>

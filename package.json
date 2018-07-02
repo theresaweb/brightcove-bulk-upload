@@ -1,0 +1,31 @@
+{
+  "name": "ew-video-upload",
+  "version": "1.0.0",
+  "description": "A web app to bulk upload videos using Brightcove API calls",
+  "main": "(app.js)",
+  "dependencies": {
+    "colors": "1.1.2",
+    "express": "^4.15.3",
+    "jquery": "^3.2.1",
+    "request": "2.81.0",
+    "winston": "2.3.1"
+  },
+  "devDependencies": {
+    "standard": "^10.0.2"
+  },
+  "scripts": {
+    "start": "node app.js | node bcProxy/bcls-proxy.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theresaweb/brightcove-bulk-upload"
+  },
+  "author": {
+    "name": "Theresa Newman",
+    "e-mail": "theresa.webdev@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/theresaweb/brightcove-bulk-uploa"
+  },
+  "homepage": "https://github.com/theresaweb/brightcove-bulk-uploa"
+}
